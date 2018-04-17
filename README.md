@@ -1,3 +1,12 @@
+### 张言
+```
+  张言：
+      对于我前几日对你的态度问题，在此对你表示诚挚的歉意，我们走过一年的时间，确实不容易，点滴之水可以累积成河，点滴恩爱之心可以铸造万里长城。从万千人中我们相识，又从万千人中我们相爱，我们一步一个脚印的正朝着婚姻的殿堂迈进，在此我向你表达我深深的爱意，我爱你，就像寒冬中的一抹阳光给你温暖的爱意，又像深深的夜色中给你投下的朦胧的月光！愿我们在今后的生活中，携手一起走过这灿烂美好的一生！言辞都在堆砌一些华丽之词，可能你看不到我的内心，但我是真的错了！！！
+
+
+```
+
+
 ## Linux
 >学习目标：服务器架设，Linux 系统编程，内核开发，网络开发等等
 >Control + r选则以前的linux命令
@@ -15,6 +24,8 @@
 
 
 ### Linux root权限
+- 　- rw- r-- r--
+表示log2012.log是一个普通文件；log2012.log的属主有读写权限；与log2012.log属主同组的用户只有读权限；其他用户也只有读权限。
 - su - root 输入密码后若密码提示错误；则修改下密码就可以了；
 - 修改密码为sudo passwd root来修改root权限，修改完后，可以进行对文件的编辑了 
 ```
@@ -84,9 +95,16 @@
 ```
 博客地址
 https://www.cnblogs.com/CHEUNGKAMING/p/5717455.html
+cron是一个linux下 的定时执行工具，可以在无需人工干预的情况下运行作业。
+　　service crond start    //启动服务
+　　service crond stop     //关闭服务
+　　service crond restart  //重启服务
+　　service crond reload   //重新载入配置
+　　service crond status   //查看服务状态 
+
 - 1. #!/bin/sh mysqldump -uuser -ppassword dbname | gzip > /var/lib/mysqlbackup/dbname`date +%Y-%m-%d_%H%M%S`.sql.gz cd  /var/lib/mysqlbackup rm -rf `find . -name '*.sql.gz' -mtime 10`/usr/yunji/backup_mysql //脚本
 - 2. chmod +x dbbackup.sh //更改备份脚本权限
-- 3. crontab -e  若每天晚上21点00备份，添加如下代码
+- 3. crontab -e （etc/crontab是系统备份，而crontab -e属于某个属猪的备份） 若每天晚上21点00备份，添加如下代码
 00 21 * * * /var/lib/mysqlbackup/dbbackup.sh
 
 ```
