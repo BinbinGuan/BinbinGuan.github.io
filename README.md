@@ -76,10 +76,20 @@
      eval "`dircolors`"
      alias ls='ls $LS_OPTIONS'
      alias ll='ls $LS_OPTIONS -l'
-     alias l='ls $LS_OPTIONS -lA'       
+     alias l='ls $LS_OPTIONS -lA'   
+- 18 echo "*/5 * * * * root temp.sh">>/etc/crontab //每5分钟执行一次脚本 
 ```           
 
-    
+### Linux下备份数据库
+```
+博客地址
+https://www.cnblogs.com/CHEUNGKAMING/p/5717455.html
+- 1. #!/bin/sh mysqldump -uuser -ppassword dbname | gzip > /var/lib/mysqlbackup/dbname`date +%Y-%m-%d_%H%M%S`.sql.gz cd  /var/lib/mysqlbackup rm -rf `find . -name '*.sql.gz' -mtime 10`/usr/yunji/backup_mysql //脚本
+- 2. chmod +x dbbackup.sh //更改备份脚本权限
+- 3. crontab -e  若每天晚上21点00备份，添加如下代码
+00 21 * * * /var/lib/mysqlbackup/dbbackup.sh
+
+```
 
 
 ### Linux网络管理命令
