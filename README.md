@@ -88,6 +88,13 @@
     - wc test.txt //统计文件的字节数、字数、行数
     - wc -l test.txt //统计行数 或者 cat test.txt| wc -l 只显示行数
     - ls -l | wc -l //统计文件数，包括当前文件   
+-22 gzip 
+    - 1.gzip xxx.txt xx1.txt //压缩多个文件，压缩后，各自分开，原文件消失
+    - 2.gzip -k xxx.txt xx1.txt  //压缩多个文件,并保留原文件
+    - 3.cat xxx.txt xx1.txt | gzip > test.gz 或者 gzip -c xxx.txt xx1.txt > test.gz //两个文件压缩为一个文件
+    - 4.gzip -d xxx.txt.gz //解压文件
+ 
+ -23 ls -l 文件.txt //查文件具体的信息
 ```           
 
 ### Linux下备份数据库
@@ -283,4 +290,6 @@ nameserver 10.2.66.66
 嘉兴金地都会艺境
 御景苑海宁
 景润苑
-
+运河大公馆
+聚米.喆园
+杭州湾
